@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+<h1>Add author</h1>
+<form action="{{url_for('add_auth')}}" method="post">
+	{{form.hidden_tag()}}
+	<p>
+		Enter author:<br>
+		{{form.author_name}}<br>
+		{% for error in form.errors.author_name %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+	</p>
+	<p>
+		Date:<br>
+		{{form.author_date}}
+		{% for error in form.errors.author_date %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+	</p>
+	<p>
+	<input type="submit" value="Add">
+	</p>
+	</form>
+	</div>
+{% endblock %}

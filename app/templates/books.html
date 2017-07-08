@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Книги</h2><h4 align="right", margin-right="15px"><a href="add_book">Добавить</a></h4>
+<table>
+	<tr><th></th><th>Название</th><th>Автор</th><th>Жанр</th><th><th></th></th></tr>
+{% for book in books %}
+	<tr><td>{{book.id}}</td><td>{{book.book}}</td><td>{{book.author_id}}</td><td style="text-align: center">{{book.genres}}</td><td>Редактировать</td><td>Удалить</td></tr>
+{% endfor %}
+</table>
+{% endblock %}	

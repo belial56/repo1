@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+<h1>Add book</h1>
+<form action="{{url_for('add_book')}}" method=post>
+	{{form.hidden_tag()}}
+	<p>
+		Enter book:<br>
+		{{form.book_name}}<br>
+		{% for error in form.errors.book_name %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+	</p>
+	<p>
+		Author:<br>
+		{{form.book_author}}
+		{% for error in form.errors.book_author %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+	</p>
+	<p>
+		Author:<br>
+		{{form.book_genre}}
+		{% for error in form.errors.book_genre %}
+        <span style="color: red;">[{{error}}]</span>
+        {% endfor %}<br>
+	</p>
+	<p>
+	<input type="submit" value="Add">
+	</p>
+	</form>
+	</div>
+{% endblock %}

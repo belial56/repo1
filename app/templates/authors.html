@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Авторы</h2><h4 align="right" class="h4"><a href="add_auth">Добавить</a></h4>
+<table>
+<tr><th></th><th>Автор</th><th>Дата рождения</th><td></td><td></td></tr>
+{% for author in authors %}
+	<tr><td>{{author.id}}</td><td>{{author.author}}</td><td style="text-align: center">{{author.date}}</td><td>Редактировать</td><td>Удалить</td></tr>
+{% endfor %}
+</table>
+{% endblock %}	
